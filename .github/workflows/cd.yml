@@ -33,3 +33,6 @@ jobs:
 
       - name: gcloud builds submit
         run: gcloud builds submit --tag us-central1-docker.pkg.dev/notely-435120/notely-ar-repo/peterkwilliams/notely:latest .
+
+      - name: Deploy to Cloud run
+        run: gcloud run deploy --notely us-central1-docker.pkg.dev/notely-435120/notely-ar-repo/peterkwilliams/notely:latest --region us-central1 --allow-unauthenticated notely-435120 --max-instances=4
